@@ -5,8 +5,8 @@ import { tokenSelector } from '../../store/selectors';
 import { useNavigate } from 'react-router-dom';
 import AuthCtrl from '../../controllers/auth';
 import { useEffect, useState } from 'react';
+import lock1 from '../../assets/images/lock1.png';
 
-import '../../assets/styles/signIn.css';
 
 const SignIn = () => {
 
@@ -55,21 +55,33 @@ const SignIn = () => {
   }
 
   return (
-    <div>
-      Sign in
+    <div  style={{marginLeft: '650px', marginTop: '100px'}}>
+        <img src={lock1} alt="lock"  style={{width:'50px', height: '50px', marginLeft:'100px'}}/>
+      <h1 style={{marginLeft:'80px', marginBottom:'20px'}}>Sign in</h1>
+      <div>
       <input
         type="text"
         placeholder="Email Address *"
+        style={{height:'40px', width:'300px', borderRadius:"5px", borderWidth:'1px'}}
         onChange={onEmailChange}
       />
+      </div>
+      <div>
       <input
         type="password"
         placeholder="Password *"
+        style={{height:'40px', width:'300px', marginTop:'20px', borderRadius:"5px", borderWidth:'1px'}}
         onChange={onPasswordChange}
       />
-      <button onClick={onSignIn}>
+      </div>
+        <div style={{marginTop:'20px'}}>
+            <input type="checkbox"/> Remember me
+        </div>
+      <div>
+      <button onClick={onSignIn} style={{height:'35px',width:'310px',marginTop:'20px',color:'white',borderRadius:"5px",backgroundColor:'#1976d2',borderWidth:'0px'}}>
         SIGN IN
       </button>
+      </div>
     </div>
   )
 };
